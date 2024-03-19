@@ -103,17 +103,17 @@ namespace WpfApp1
 ## Screens
 
 ### Common area
-![CommonArea](CommonArea.PNG)
+![CommonArea](README.assets/CommonArea.PNG)
 
 ---
 
 ### Area 1
 
-![Area1](Area1.PNG)
+![Area1](README.assets/Area1.PNG)
 
 ---
 
 ### Area 2
 
-![Area2](Area2.PNG)
+![Area2](README.assets/Area2.PNG)
 
