@@ -42,7 +42,7 @@ namespace WpfApp1
             InitializeComponent();
 
             // Yout absolute path to json file
-            string path = "C:\\Users\\samoi\\Source\\Repos\\WpfApp1\\WpfApp1\\src\\data2.json";
+            string path = "C:\\Users\\samoi\\Source\\Repos\\WpfApp1\\WpfApp1\\src\\data.json";
             try
             {
                 string json = File.ReadAllText(path);
@@ -51,15 +51,18 @@ namespace WpfApp1
                 options.PropertyNameCaseInsensitive = true;
                 var meteringsData = JsonSerializer.Deserialize<MeteringsData>(json, options);
 
+                // set size for using sample for visualization
+                int size = meteringsData.Meterings.Length;
+
                 List<double> dataX = new List<double>();
                 List<double> dataY = new List<double>();
-                List<double>[] arrX = new List<double>[meteringsData.Meterings.Length];
-                List<double>[] arrY = new List<double>[meteringsData.Meterings.Length];
+                List<double>[] arrX = new List<double>[size];
+                List<double>[] arrY = new List<double>[size];
 
                 var myPalette = new ScottPlot.Palettes.Category20();
 
                 int c = 0;
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < meteringsData.Meterings.Length; i++)
                 {
                     var meteringData = meteringsData.Meterings[i];
 
